@@ -42,3 +42,4 @@ This procedure extracts the factory firmware (8 MB SPI NOR Flash) from the **Wor
    ```bash
    python3 tools/verify_dump.py
    ```
+
