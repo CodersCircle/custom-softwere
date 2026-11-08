@@ -48,3 +48,4 @@ Reverse engineering and custom software development for the **WorldTech WT-RV718
 ## Quick Reference Links
 - Detailed Hardware Breakdown: [docs/HARDWARE.md](docs/HARDWARE.md)
 - Firmware Backup Plan: [docs/FIRMWARE_BACKUP_PLAN.md](docs/FIRMWARE_BACKUP_PLAN.md)
+

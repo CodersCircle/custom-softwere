@@ -109,3 +109,4 @@ Once a verified dump is acquired:
    - Allwinner eGON bootloader signature (`eGON.BT0` / `eGON.DIR`).
    - Melis OS or Linux kernel image (uImage / zImage).
    - Filesystem types: SquashFS, CramFS, JFFS2, or raw binary asset tables (fonts, UI bitmaps, boot logos).
+

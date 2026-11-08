@@ -110,3 +110,4 @@ The **WorldTech WT-RV7186BT** is an aftermarket automotive smart rearview mirror
 | **MicroSD (SDC0)** | BROM Boot Priority | Secondary backup method (boot custom dumper payload) | **Very Low** | Safe, purely non-invasive; read-only to onboard flash. |
 | **USB-A Port** | USB Host / OTG FEL | Potential FEL mode recovery interface | **Medium** | Do NOT connect directly to host Mac until pinout and VBUS voltage are verified with DMM. USB-A ports on car monitors frequently carry 5V or vehicle power out. |
 | **UART0 Console** | Serial Debug Logging | Diagnostic log observation (boot messages, shell) | **Low** | Use 3.3V FTDI / CP2102 adapter with RX/TX only. Do NOT connect power pins. |
+
