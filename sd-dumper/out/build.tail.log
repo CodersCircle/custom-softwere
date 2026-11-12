@@ -1,0 +1,25 @@
+Cloning into '/tmp/u-boot'...
+warning: refs/tags/v2024.10 573d69af36cfb10d58e189656b03a659654b0cd9 is not a commit!
+Note: switching to 'f919c3a889f0ec7d63a48b5d0ed064386b0980bd'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  79% (25765/32407)Updating files:  80% (25926/32407)Updating files:  81% (26250/32407)Updating files:  82% (26574/32407)Updating files:  83% (26898/32407)Updating files:  84% (27222/32407)Updating files:  85% (27546/32407)Updating files:  86% (27871/32407)Updating files:  87% (28195/32407)Updating files:  88% (28519/32407)Updating files:  89% (28843/32407)Updating files:  90% (29167/32407)Updating files:  91% (29491/32407)Updating files:  92% (29815/32407)Updating files:  93% (30139/32407)Updating files:  94% (30463/32407)Updating files:  95% (30787/32407)Updating files:  96% (31111/32407)Updating files:  97% (31435/32407)Updating files:  98% (31759/32407)Updating files:  99% (32083/32407)Updating files: 100% (32407/32407)Updating files: 100% (32407/32407), done.
+=== HARDENING 1: Write-Enable (0x06) opcode replaced with Read-Status (0x05) ===
+43:#define SPINOR_OP_WREN		0x06	/* Write enable */
+43:#define SPINOR_OP_WREN		0x05 /* READ-ONLY DUMPER: WREN disabled */	/* Write enable */
+drivers/spi/ich.h:120:#define SPI_OPCODE_WREN		0x06
+FATAL: other write-enable definitions found
