@@ -20,7 +20,8 @@ grep -nE 'define[[:space:]]+SPINOR_OP_WREN[[:space:]]+0x06' "$H"
 sed -i -E 's/(define[[:space:]]+SPINOR_OP_WREN[[:space:]]+)0x06/\10x05 \/* READ-ONLY DUMPER: WREN disabled *\//' "$H"
 grep -nE 'define[[:space:]]+SPINOR_OP_WREN[[:space:]]+0x05' "$H"
 # Any other write-enable opcode definition or literal use in SPI flash code => abort.
-if grep -rnE '(WREN|WRITE_ENABLE)[A-Z_]*[[:space:]]+0x06|SPI_MEM_OP_CMD\(0x06' drivers/mtd/spi drivers/spi include/linux/mtd arch/arm/mach-sunxi; then
+if grep -rnE '(WREN|WRITE_ENABLE)[A-Z_]*[[:space:]]+0x06|SPI_MEM_OP_CMD\(0x06' drivers/mtd/spi drivers/spi include/linux/mtd arch/arm/mach-sunxi \
+     | grep -v '^drivers/spi/ich\.'; then
   echo "FATAL: other write-enable definitions found"; exit 1
 fi
 
@@ -54,7 +55,7 @@ fail=0
 for s in ENV_IS_NOWHERE SPI_SUNXI DM_SPI_FLASH SPI_FLASH_EON CMD_SF FAT_WRITE CMD_HASH SHA256 USE_DEFAULT_ENV_FILE MMC_WRITE; do
   grep -q "^CONFIG_${s}=y" .config || { echo "MISSING: CONFIG_${s}"; fail=1; }
 done
-for s in SPI_FLASH_UNLOCK_ALL ENV_IS_IN_SPI_FLASH CMD_SPI CMD_MTD CMD_SF_TEST; do
+for s in SPI_FLASH_UNLOCK_ALL ENV_IS_IN_SPI_FLASH CMD_SPI CMD_MTD CMD_SF_TEST ICH_SPI; do
   if grep -q "^CONFIG_${s}=y" .config; then echo "FORBIDDEN ENABLED: CONFIG_${s}"; fail=1; fi
 done
 [ "$fail" = 0 ] || exit 1
